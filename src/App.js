@@ -1,5 +1,7 @@
 import React from "react";
 import { GithubContext } from "./context/context";
+import Search from "./components/Search";
+import Button from "./components/Button";
 import "./App.css";
 
 function App() {
@@ -7,7 +9,10 @@ function App() {
   console.log(data);
   return (
     <div className="App">
-      <h1> GitHub Repositories explorer</h1>
+      <div className="frame">
+        <Search />
+        <Button />
+      </div>
     </div>
   );
 }

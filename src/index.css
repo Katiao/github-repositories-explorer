@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* VARIABLES */
+
+/* Monochromatic colors: change lightness and sometimes reduce saturation but never 
+change hue. Primary color to be 100% saturated */
+:root {
+  --clr-primary-blue: hsl(202, 100%, 50%);
+  --clr-dark-grey: hsl(202, 5%, 60%);
+  --clr-light-grey: hsl(202, 5%, 80%);
+  --clr-primary-black: hsl(202, 100%, 5%);
+  --clr-primary-white: hsl(202, 100%, 99%);
+
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* GLOBAL STYLES */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--clr-dark-grey);
+  color: var(--clr-primary-black);
+  font-size: 1rem;
 }
