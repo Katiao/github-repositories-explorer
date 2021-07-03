@@ -22,12 +22,6 @@ const SearchForm = () => {
 };
 
 const Wrapper = styled.section`
-  /* .section-center {
-    background-color: var(--clr-primary-white);
-    width: 90vw;
-    margin: 2rem auto;
-    max-width: 1170px;
-  } */
   .form-control {
     background-color: var(--clr-primary-white);
     display: flex;
@@ -59,6 +53,7 @@ const Wrapper = styled.section`
       padding: 0.5rem 0.5rem;
       margin: 0 1rem 1rem;
       cursor: pointer;
+      transition: all 0.3s linear;
       &:hover {
         background-color: var(--clr-dark-blue);
         color: var(--clr-primary-white);
