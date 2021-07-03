@@ -33,8 +33,11 @@ const Wrapper = styled.section`
     background-color: var(--clr-primary-white);
     display: flex;
     flex-direction: column;
+    align-items: center;
     input {
       outline: none;
+      width: 100%;
+      max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-dark-grey);
       border-width: thin;
