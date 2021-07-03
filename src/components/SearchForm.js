@@ -23,13 +23,13 @@ const SearchForm = () => {
 
 const Wrapper = styled.section`
   .form-control {
-    background-color: var(--clr-primary-white);
+    //background-color: var(--clr-primary-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     input {
       width: 100%;
-      max-width: 20rem;
+      //max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-dark-grey);
       color: var(--clr-primary-black);
@@ -45,7 +45,7 @@ const Wrapper = styled.section`
     button {
       border-radius: 2px;
       width: 100%;
-      max-width: 20rem;
+      //max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-primary-blue);
       background-color: var(--clr-primary-blue);

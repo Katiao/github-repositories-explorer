@@ -22,6 +22,7 @@ const SingleUser = ({ login }) => {
           onClick={showRepo}
         />
       </div>
+
       {isRepoOpen &&
         repos.map((item) => {
           return <SingleRepo key={item.id} {...item} />;
@@ -37,13 +38,13 @@ const Wrapper = styled.article`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 20rem;
+    //max-width: 20rem;
     border: 1px solid;
     border-color: var(--clr-dark-grey);
     color: var(--clr-primary-black);
     background-color: var(--clr-light-grey);
     padding: 0.4rem 0.3rem;
-    margin: 1rem auto;
+    margin: 1rem 0;
     border-radius: 2px;
 
     .arrow {

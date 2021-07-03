@@ -30,7 +30,7 @@ change hue. Primary color to be 100% saturated */
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--clr-primary-white);
+  /*  background-color: var(--clr-primary-white); */
   color: var(--clr-primary-black);
   /*to add padding here and media query for smaller screen sizes*/
 
