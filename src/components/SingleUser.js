@@ -1,11 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 
-const SingleUser = () => {
+const SingleUser = ({ login }) => {
   return (
-    <div>
-      <h1>Single User</h1>
-    </div>
+    <Wrapper>
+      <div className="userCard">{login}</div>
+    </Wrapper>
   );
 };
 
 export default SingleUser;
+
+const Wrapper = styled.article``;
