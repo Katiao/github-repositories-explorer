@@ -5,30 +5,28 @@ import { GithubContext } from "../context/context";
 const Search = () => {
   return (
     <Wrapper className="section">
-      <div className="section-center">
-        <form>
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Enter username"
-              //value={user}
-              //onChange={(e) => setUser(e.target.value)}
-            />
-            <button type="submit">Search</button>
-          </div>
-        </form>
-      </div>
+      <form>
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="Enter username"
+            //value={user}
+            //onChange={(e) => setUser(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </div>
+      </form>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  .section-center {
+  /* .section-center {
     background-color: var(--clr-primary-white);
     width: 90vw;
     margin: 2rem auto;
     max-width: 1170px;
-  }
+  } */
   .form-control {
     background-color: var(--clr-primary-white);
     display: flex;
