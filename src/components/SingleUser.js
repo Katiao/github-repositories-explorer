@@ -17,7 +17,10 @@ const SingleUser = ({ login }) => {
     <Wrapper>
       <div className="user-card">
         <div>{login}</div>
-        <MdKeyboardArrowDown className="arrow" onClick={showRepo} />
+        <MdKeyboardArrowDown
+          className={`${isRepoOpen ? "arrow-down arrow" : "arrow"}`}
+          onClick={showRepo}
+        />
       </div>
       {isRepoOpen &&
         repos.map((item) => {
@@ -47,6 +50,10 @@ const Wrapper = styled.article`
       font-size: 1.2rem;
       stroke-width: 0.02rem;
       cursor: pointer;
+    }
+    .arrow-down {
+      //transition: all 0.3s linear;
+      transform: rotate(180deg);
     }
   }
 `;
