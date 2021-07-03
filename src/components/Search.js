@@ -35,20 +35,35 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     input {
-      outline: none;
       width: 100%;
       max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-dark-grey);
-      border-width: thin;
       color: var(--clr-primary-black);
-      padding: 0.5rem 0.5rem;
       background-color: var(--clr-light-grey);
+      padding: 0.5rem 0.5rem;
       margin: 1rem;
       border-radius: 2px;
     }
     input::placeholder {
       color: var(--clr-darker-grey);
+    }
+
+    button {
+      border-radius: 2px;
+      width: 100%;
+      max-width: 20rem;
+      border: 1px solid;
+      border-color: var(--clr-primary-blue);
+      background-color: var(--clr-primary-blue);
+      color: var(--clr-light-grey);
+      padding: 0.5rem 0.5rem;
+      margin: 0 1rem 1rem;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--clr-dark-blue);
+        color: var(--clr-primary-white);
+      }
     }
   }
 `;

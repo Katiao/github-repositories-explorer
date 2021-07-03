@@ -6,7 +6,8 @@
 /* Monochromatic colors: change lightness and sometimes reduce saturation but never 
 change hue. Primary color to be 100% saturated */
 :root {
-  --clr-primary-blue: hsl(202, 100%, 50%);
+  --clr-primary-blue: hsl(202, 100%, 60%);
+  --clr-dark-blue: hsl(202, 100%, 40%);
   --clr-light-grey: hsl(202, 5%, 90%);
   --clr-dark-grey: hsl(202, 5%, 82%);
   --clr-darker-grey: hsl(202, 5%, 60%);
