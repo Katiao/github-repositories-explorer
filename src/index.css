@@ -38,7 +38,7 @@ body {
   Default browser font size is 16px
 	by using rem we will make the entire layout of the webpage dependent on the font-size.
   We can now simply change the font size 	and all the measurements in rem will scale up or down accordingly. 
-	1 rem = 10px; 10px/16px = 62.5%
+	1 rem = 14px; 14px/16px = 87.5%
   */
-  font-size: 62.5%;
+  font-size: 87.5%;
 }
