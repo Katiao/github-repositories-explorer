@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { GithubContext } from "./context/context";
 import Search from "./components/Search";
-import Button from "./components/Button";
 import "./App.css";
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
     <Wrapper>
       <div className="container">
         <Search />
-        <Button />
       </div>
     </Wrapper>
   );

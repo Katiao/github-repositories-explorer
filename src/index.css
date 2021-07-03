@@ -30,5 +30,13 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--clr-dark-grey);
   color: var(--clr-primary-black);
-  font-size: 1rem;
+  /*to add padding here and media query for smaller screen sizes*/
+
+  /*this defines what 1 rem is.
+  Default browser font size is 16px
+	by using rem we will make the entire layout of the webpage dependent on the font-size.
+  We can now simply change the font size 	and all the measurements in rem will scale up or down accordingly. 
+	1 rem = 10px; 10px/16px = 62.5%
+  */
+  font-size: 80.5%;
 }
