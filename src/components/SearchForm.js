@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
 
-const Search = () => {
+const SearchForm = () => {
+  //const { setSearchTerm } = GithubContext();
   return (
     <Wrapper className="section">
       <form>
@@ -65,4 +66,4 @@ const Wrapper = styled.section`
     }
   }
 `;
-export default Search;
+export default SearchForm;

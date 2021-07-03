@@ -1,7 +1,8 @@
 import React from "react";
 //import styled from "styled-components";
 import { GithubContext } from "./context/context";
-import Search from "./components/Search";
+import SearchForm from "./components/SearchForm";
+import UsersList from "./components/UsersList";
 import "./App.css";
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
   console.log(data);
   return (
     <>
-      <Search />
+      <SearchForm />
+      <UsersList />
     </>
   );
 }
