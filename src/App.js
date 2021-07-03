@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { GithubContext } from "./context/context";
 import Search from "./components/Search";
 import Button from "./components/Button";
@@ -8,13 +9,20 @@ function App() {
   const data = React.useContext(GithubContext);
   console.log(data);
   return (
-    <div className="App">
-      <div className="frame">
+    <Wrapper>
+      <div className="container">
         <Search />
         <Button />
       </div>
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  background-color: var(--clr-primary-white);
+  width: 90vw;
+  margin: 2rem auto;
+  max-width: 1170px;
+`;
 
 export default App;
