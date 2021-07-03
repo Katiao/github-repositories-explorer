@@ -7,13 +7,14 @@
 change hue. Primary color to be 100% saturated */
 :root {
   --clr-primary-blue: hsl(202, 100%, 50%);
-  --clr-dark-grey: hsl(202, 5%, 60%);
-  --clr-light-grey: hsl(202, 5%, 80%);
+  --clr-light-grey: hsl(202, 5%, 90%);
+  --clr-dark-grey: hsl(202, 5%, 82%);
+  --clr-darker-grey: hsl(202, 5%, 60%);
   --clr-primary-black: hsl(202, 100%, 5%);
   --clr-primary-white: hsl(202, 100%, 99%);
 
-  --spacing: 0.1rem;
-  --radius: 0.25rem;
+  /* --spacing: 0.1rem;
+  --radius: 0.25rem; */
 }
 
 /* GLOBAL STYLES */
@@ -38,5 +39,5 @@ body {
   We can now simply change the font size 	and all the measurements in rem will scale up or down accordingly. 
 	1 rem = 10px; 10px/16px = 62.5%
   */
-  font-size: 80.5%;
+  font-size: 62.5%;
 }
