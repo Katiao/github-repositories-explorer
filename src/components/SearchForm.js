@@ -1,18 +1,28 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { GithubContext } from "../context/context";
+//import { GithubContext } from "../context/context";
 
 const SearchForm = () => {
-  //const { setSearchTerm } = GithubContext();
+  //local state that collects what user types in form:
+  const [user, setUser] = useState("");
+  //get things from global context
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (user) {
+      console.log("user");
+    }
+  };
+
   return (
     <Wrapper className="section">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-control">
           <input
             type="text"
             placeholder="Enter username"
-            //value={user}
-            //onChange={(e) => setUser(e.target.value)}
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
           />
           <button type="submit">Search</button>
         </div>
