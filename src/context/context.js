@@ -1,6 +1,4 @@
 import React, { useContext, useState } from "react";
-import mockUsers from "./mockData/mockUsers";
-import mockRepos from "./mockData/mockRepos";
 require("dotenv").config();
 
 const ROOT_URL = "https://api.github.com";
@@ -14,7 +12,7 @@ const GithubContext = React.createContext();
 const GithubProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
-  const [githubUsers, setGithubUsers] = useState(mockUsers);
+  const [githubUsers, setGithubUsers] = useState([]);
   const [repos, setRepos] = useState([]);
 
   //passed down this function in values as we'll use that in the SearchForm
