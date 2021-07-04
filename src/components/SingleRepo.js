@@ -3,17 +3,12 @@ import styled from "styled-components";
 import { FaStar } from "react-icons/fa";
 //import { useGithubContext } from "../context/context";
 
-const SingleRepo = () => {
+const SingleRepo = ({ name, description, stargazers_count }) => {
   return (
     <Wrapper className="section">
-      <h3 className="title">Repository title</h3>
-      <p className="description">
-        Repository description Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Ex omnis dolorum reiciendis dolore commodi placeat
-        quibusdam itaque dolores sequi voluptas nam nobis cumque aliquam est
-        soluta sit distinctio unde repellat quos.
-      </p>
-      <p className="stars">12</p>
+      <h3 className="title">{name}</h3>
+      <p className="description">{description}</p>
+      <p className="stars">{stargazers_count}</p>
       <FaStar className="icon" />
     </Wrapper>
   );

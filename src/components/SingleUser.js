@@ -5,7 +5,7 @@ import { useGithubContext } from "../context/context";
 import SingleRepo from "./SingleRepo";
 
 const SingleUser = ({ login }) => {
-  const { repos } = useGithubContext();
+  const { repos, searchRepos } = useGithubContext();
 
   //setting state locally here as we only want state to affect this component and not other SigleUser components
   const [isRepoOpen, setisRepoOpen] = useState(false);
@@ -13,19 +13,25 @@ const SingleUser = ({ login }) => {
   const showRepo = () => {
     setisRepoOpen(!isRepoOpen);
   };
+
+  const onClickHandler = () => {
+    searchRepos(login);
+    showRepo();
+  };
+
   return (
     <Wrapper>
       <div className="user-card">
         <div>{login}</div>
         <MdKeyboardArrowDown
           className={`${isRepoOpen ? "arrow-down arrow" : "arrow"}`}
-          onClick={showRepo}
+          onClick={onClickHandler}
         />
       </div>
 
       {isRepoOpen &&
-        repos.map((item) => {
-          return <SingleRepo key={item.id} {...item} />;
+        repos.map((repo) => {
+          return <SingleRepo key={repo.id} {...repo} />;
         })}
     </Wrapper>
   );

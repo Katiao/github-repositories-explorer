@@ -15,10 +15,11 @@ const GithubProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
   const [githubUsers, setGithubUsers] = useState(mockUsers);
-  const [repos, setRepos] = useState(mockRepos);
+  const [repos, setRepos] = useState([]);
 
   //passed down this function in values as we'll use that in the SearchForm
-  const searchGithubUser = async (user) => {
+  const searchGithubUsers = async (user) => {
+    //setLoading(true)
     const response = await fetch(
       `${ROOT_URL}/search/users?q=${user}&per_page=5?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     );
@@ -26,10 +27,26 @@ const GithubProvider = ({ children }) => {
     if (userResponse) {
       const usersList = userResponse.items.slice(0, 5);
       setGithubUsers(usersList);
+      //console.log(usersList);
     } else {
       console.log("there is no user with that username");
     }
   };
+
+  //pass down this function in values so that we can use it in the SingleUser.js
+  const searchRepos = async (login) => {
+    //setLoading true
+    const response = await fetch(
+      `${ROOT_URL}/users/${login}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+    );
+    const repoResponse = await response.json();
+    if (repoResponse) {
+      setRepos(repoResponse);
+    } else {
+      console.log("there are no repos for this user");
+    }
+  };
+  //console.log(repos);
 
   return (
     <GithubContext.Provider
@@ -39,8 +56,9 @@ const GithubProvider = ({ children }) => {
         searchTerm,
         setSearchTerm,
         githubUsers,
-        searchGithubUser,
+        searchGithubUsers,
         repos,
+        searchRepos,
       }}
     >
       {children}

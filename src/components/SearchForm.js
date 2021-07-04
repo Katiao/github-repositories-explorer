@@ -6,13 +6,13 @@ const SearchForm = () => {
   //local state that collects what user types in form:
   const [user, setUser] = useState("");
   //get things from global context
-  const { searchGithubUser } = useGithubContext();
+  const { searchGithubUsers } = useGithubContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //function coming from global context but user state is local
     if (user) {
-      searchGithubUser(user);
+      searchGithubUsers(user);
     }
   };
 
