@@ -39,7 +39,7 @@ const Wrapper = styled.section`
       border-radius: 2px;
     }
     input::placeholder {
-      color: var(--clr-darker-grey);
+      color: var(--clr-darkest-grey);
     }
 
     button {
