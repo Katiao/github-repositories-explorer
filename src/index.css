@@ -13,7 +13,7 @@ change hue. Primary color to be 100% saturated */
   --clr-darker-grey: hsl(202, 5%, 87%);
   --clr-darkest-grey: hsl(202, 5%, 60%);
   --clr-primary-black: hsl(202, 100%, 5%);
-  --clr-primary-white: hsl(202, 100%, 99%);
+  --clr-primary-white: hsl(202, 100%, 100%);
 
   /* --spacing: 0.1rem;
   --radius: 0.25rem; */
@@ -31,7 +31,7 @@ change hue. Primary color to be 100% saturated */
 
 body {
   font-family: "Roboto", sans-serif;
-  /*  background-color: var(--clr-primary-white); */
+  background-color: var(--clr-primary-white);
   color: var(--clr-primary-black);
   /*to add padding here and media query for smaller screen sizes*/
 
