@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import mockUsers from "./mockData/mockUsers";
 import mockRepos from "./mockData/mockRepos";
-import axios from "axios";
 require("dotenv").config();
 
 const ROOT_URL = "https://api.github.com";
@@ -18,6 +17,20 @@ const GithubProvider = ({ children }) => {
   const [githubUsers, setGithubUsers] = useState(mockUsers);
   const [repos, setRepos] = useState(mockRepos);
 
+  //passed down this function in values as we'll use that in the SearchForm
+  const searchGithubUser = async (user) => {
+    const response = await fetch(
+      `${ROOT_URL}/search/users?q=${user}&per_page=5?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+    );
+    const userResponse = await response.json();
+    if (userResponse) {
+      const usersList = userResponse.items.slice(0, 5);
+      setGithubUsers(usersList);
+    } else {
+      console.log("there is no user with that username");
+    }
+  };
+
   return (
     <GithubContext.Provider
       //object with properties
@@ -26,6 +39,7 @@ const GithubProvider = ({ children }) => {
         searchTerm,
         setSearchTerm,
         githubUsers,
+        searchGithubUser,
         repos,
       }}
     >

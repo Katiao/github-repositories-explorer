@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { GithubContext } from "./context/context";
 import SearchForm from "./components/SearchForm";
 import UsersList from "./components/UsersList";
 import "./App.css";
 
 function App() {
-  const data = React.useContext(GithubContext);
-  console.log(data);
   return (
     <Wrapper>
       <div className="container">

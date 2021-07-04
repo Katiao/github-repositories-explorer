@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
-//import { GithubContext } from "../context/context";
+import { useGithubContext } from "../context/context";
 
 const SearchForm = () => {
   //local state that collects what user types in form:
   const [user, setUser] = useState("");
   //get things from global context
+  const { searchGithubUser } = useGithubContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //function coming from global context but user state is local
     if (user) {
-      console.log("user");
+      searchGithubUser(user);
     }
   };
 
