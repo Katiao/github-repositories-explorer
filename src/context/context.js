@@ -11,6 +11,7 @@ const GithubContext = React.createContext();
 //return the context provider that will wrap our whole app and provide access to state
 const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isRepoLoading, setIsRepoLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
   const [githubUsers, setGithubUsers] = useState([]);
   const [repos, setRepos] = useState([]);
@@ -35,13 +36,14 @@ const GithubProvider = ({ children }) => {
 
   //pass down this function in values so that we can use it in the SingleUser.js
   const searchRepos = async (login) => {
-    //setLoading true
+    setIsRepoLoading(true);
     const response = await fetch(
       `${ROOT_URL}/users/${login}/repos?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     );
     const repoResponse = await response.json();
     if (repoResponse) {
       setRepos(repoResponse);
+      setIsRepoLoading(false);
     } else {
       console.log("there are no repos for this user");
     }
@@ -53,6 +55,7 @@ const GithubProvider = ({ children }) => {
       //object with properties
       value={{
         isLoading,
+        isRepoLoading,
         searchTerm,
         setSearchTerm,
         githubUsers,

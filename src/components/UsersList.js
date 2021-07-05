@@ -5,11 +5,11 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 //import Loading from "./Loading";
 import { useGithubContext } from "../context/context";
 import SingleRepo from "./SingleRepo";
-import { FaStar } from "react-icons/fa";
+import Loading from "./Loading";
 
 function UsersList() {
   //destructuring, getting data/state from context:
-  const { loading, repos, githubUsers, searchRepos } = useGithubContext();
+  const { isRepoLoading, repos, githubUsers, searchRepos } = useGithubContext();
   const [clicked, setClicked] = useState(false);
 
   const toggle = (index) => {
@@ -21,17 +21,12 @@ function UsersList() {
     setClicked(index);
   };
 
-  //loading should be true by default, false during development:
-  /* if (loading) {
-    return <Loading />;
-  } */
-
   const handleClick = (index, login) => {
     searchRepos(login);
     toggle(index);
   };
 
-  //mapping through users data and displaying each user via separate component:
+  //mapping through users data and displaying each user:
   return (
     <div>
       {githubUsers.map((item, index) => {
@@ -47,9 +42,13 @@ function UsersList() {
             </Wrapper>
             {clicked === index ? (
               <div>
-                {repos.map((repo) => {
-                  return <SingleRepo key={repo.id} {...repo} />;
-                })}
+                {isRepoLoading ? (
+                  <Loading />
+                ) : (
+                  repos.map((repo) => {
+                    return <SingleRepo key={repo.id} {...repo} />;
+                  })
+                )}
               </div>
             ) : null}
           </>
