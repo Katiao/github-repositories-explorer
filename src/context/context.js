@@ -10,14 +10,14 @@ const GithubContext = React.createContext();
 
 //return the context provider that will wrap our whole app and provide access to state
 const GithubProvider = ({ children }) => {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("a");
   const [githubUsers, setGithubUsers] = useState([]);
   const [repos, setRepos] = useState([]);
 
   //passed down this function in values as we'll use that in the SearchForm
   const searchGithubUsers = async (user) => {
-    //setLoading(true)
+    setIsLoading(true);
     const response = await fetch(
       `${ROOT_URL}/search/users?q=${user}&per_page=5?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     );
@@ -25,10 +25,12 @@ const GithubProvider = ({ children }) => {
     if (userResponse) {
       const usersList = userResponse.items.slice(0, 5);
       setGithubUsers(usersList);
+
       //console.log(usersList);
     } else {
       console.log("there is no user with that username");
     }
+    setIsLoading(false);
   };
 
   //pass down this function in values so that we can use it in the SingleUser.js
@@ -50,7 +52,7 @@ const GithubProvider = ({ children }) => {
     <GithubContext.Provider
       //object with properties
       value={{
-        loading,
+        isLoading,
         searchTerm,
         setSearchTerm,
         githubUsers,

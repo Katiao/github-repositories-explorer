@@ -6,7 +6,7 @@ const SearchForm = () => {
   //local state that collects what user types in form:
   const [user, setUser] = useState("");
   //get things from global context
-  const { searchGithubUsers } = useGithubContext();
+  const { searchGithubUsers, isLoading } = useGithubContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const SearchForm = () => {
             value={user}
             onChange={(e) => setUser(e.target.value)}
           />
-          <button type="submit">Search</button>
+          {!isLoading && <button type="submit">Search</button>}
         </div>
       </form>
     </Wrapper>
