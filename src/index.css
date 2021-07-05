@@ -33,6 +33,10 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--clr-primary-white);
   color: var(--clr-primary-black);
+  /* this prevents the app from moving when vertical scrollbar appears: */
+  overflow-x: hidden;
+  width: 100vw;
+  margin-right: calc(100vw - 100%);
   /*to add padding here and media query for smaller screen sizes*/
 
   /*this defines what 1 rem is.
