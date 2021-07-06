@@ -30,6 +30,10 @@ change hue. Primary color to be 100% saturated */
   --margin-m: 0.75rem;
   --margin-l: 1rem;
   --margin-xl: 2rem;
+
+  /* font-sizes */
+
+  --font-size-m: 1rem;
 }
 
 /* 
@@ -61,7 +65,7 @@ body {
   Default browser font size is 16px
 	by using rem we will make the entire layout of the webpage dependent on the font-size.
   We can now simply change the font size 	and all the measurements in rem will scale up or down accordingly. 
-	1 rem = 14px; 14px/16px = 87.5%
+	100% = 16px
   */
-  font-size: 87.5%;
+  font-size: 100%;
 }

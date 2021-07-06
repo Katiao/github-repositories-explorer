@@ -48,6 +48,8 @@ const Wrapper = styled.section`
     flex-direction: column;
     align-items: center;
     input {
+      font-family: default;
+      font-size: var(--font-size-m);
       width: 100%;
       border: 1px solid;
       border-color: var(--clr-dark-grey);
@@ -64,6 +66,8 @@ const Wrapper = styled.section`
 
     input::placeholder {
       color: var(--clr-darkest-grey);
+      font-family: default;
+      font-size: var(--font-size-m);
     }
 
     button {
@@ -73,6 +77,8 @@ const Wrapper = styled.section`
       border-color: var(--clr-primary-blue);
       background-color: var(--clr-primary-blue);
       color: var(--clr-light-grey);
+      font-family: default;
+      font-size: var(--font-size-m);
       padding: 0.5rem 0.5rem;
       margin: 0 var(--margin-l);
       cursor: pointer;

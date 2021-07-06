@@ -80,7 +80,7 @@ const Wrapper = styled.div`
 
   .login {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: var(--font-size-m);
   }
 
   .arrow {
