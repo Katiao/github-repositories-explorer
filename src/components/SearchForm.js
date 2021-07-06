@@ -63,7 +63,7 @@ const Wrapper = styled.section`
       background-color: var(--clr-primary-blue);
       color: var(--clr-light-grey);
       padding: 0.5rem 0.5rem;
-      margin: 0 1rem 1rem;
+      margin: 0 1rem;
       cursor: pointer;
       transition: all 0.3s linear;
       &:hover {

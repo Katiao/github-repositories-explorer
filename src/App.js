@@ -34,7 +34,7 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     grid-template-columns: 18rem;
-    gap: 1rem;
+    //gap: 1rem;
   }
 `;
 
@@ -44,7 +44,7 @@ const Container = styled.div`
     display: grid;
     justify-content: center;
     grid-template-columns: 18rem;
-    gap: 1rem;
+    //gap: 1rem;
   }
 `;
 

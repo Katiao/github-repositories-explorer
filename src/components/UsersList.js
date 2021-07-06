@@ -71,6 +71,9 @@ const Wrapper = styled.div`
   margin: 0.75rem 0;
   border-radius: 2px;
   cursor: pointer;
+  :first-child {
+    margin: 0.6rem 0;
+  }
 
   .login {
     font-weight: 400;
