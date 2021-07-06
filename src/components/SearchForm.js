@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useGithubContext } from "../context/context";
 
 const SearchForm = () => {
   //get things from global context
-  const { searchGithubUsers, isLoading, searchedUser, setSearchedUser } =
-    useGithubContext();
+  const { searchGithubUsers, isLoading, setSearchedUser } = useGithubContext();
+
+  //useref used for focus on search - see below
+  const searchValue = useRef("");
 
   //local state for onChange while user types search term:
   const [searchTerm, setSearchTerm] = useState("");
+
+  //focus on search form when app loads
+  useEffect(() => {
+    searchValue.current.focus();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +32,7 @@ const SearchForm = () => {
             type="text"
             placeholder="Enter username"
             value={searchTerm}
+            ref={searchValue}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           {!isLoading && <button type="submit">Search</button>}
