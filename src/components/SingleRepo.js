@@ -17,7 +17,7 @@ const SingleRepo = ({ name, description, stargazers_count }) => {
 export default SingleRepo;
 
 const Wrapper = styled.div`
-  margin: 1rem 0 1rem 1rem;
+  margin: 0.75rem 0 0.75rem 1rem;
   padding: 0.6rem 0.4rem;
   background-color: var(--clr-darker-grey);
   display: grid;

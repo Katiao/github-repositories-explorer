@@ -33,7 +33,7 @@ function UsersList() {
         return (
           <>
             <Wrapper onClick={() => handleClick(index, item.login)} key={index}>
-              <h3>{item.login}</h3>
+              <h3 className="login">{item.login}</h3>
               <MdKeyboardArrowDown
                 className={`${
                   clicked === index ? "arrow-down arrow" : "arrow"
@@ -68,9 +68,14 @@ const Wrapper = styled.div`
   color: var(--clr-primary-black);
   background-color: var(--clr-light-grey);
   padding: 0.4rem 0.3rem;
-  margin: 1rem 0;
+  margin: 0.75rem 0;
   border-radius: 2px;
   cursor: pointer;
+
+  .login {
+    font-weight: 400;
+    font-size: 1rem;
+  }
 
   .arrow {
     font-size: 1.2rem;
