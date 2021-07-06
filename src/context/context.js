@@ -22,7 +22,7 @@ const GithubProvider = ({ children }) => {
   const searchGithubUsers = async (user) => {
     setIsLoading(true);
     const response = await fetch(
-      `${ROOT_URL}/search/users?q=${user}&per_page=5?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
+      `${ROOT_URL}/search/users?q=${user}in:login&per_page=5?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
     );
     const userResponse = await response.json();
     if (userResponse) {
