@@ -53,6 +53,7 @@ body {
   overflow-x: hidden;
   width: 100vw;
   margin-right: calc(100vw - 100%);
+  margin-bottom: 1rem;
   /*to add padding here and media query for smaller screen sizes*/
 
   /*this defines what 1 rem is.
