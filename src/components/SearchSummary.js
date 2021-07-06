@@ -18,6 +18,6 @@ const SearchSummary = () => {
 export default SearchSummary;
 
 const Wrapper = styled.div`
-  margin: 0.75rem 0 0.15rem;
+  margin: var(--margin-m) 0 var(--margin-xs);
   color: var(--clr-darkest-grey);
 `;

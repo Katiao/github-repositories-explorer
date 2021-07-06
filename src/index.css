@@ -1,7 +1,15 @@
-/* FONTS */
+/* 
+================
+FONTS 
+================
+*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-/* VARIABLES */
+/* 
+================
+VARIABLES
+================
+*/
 
 /* Monochromatic colors: change lightness and sometimes reduce saturation but never 
 change hue. Primary color to be 100% saturated */
@@ -15,11 +23,19 @@ change hue. Primary color to be 100% saturated */
   --clr-primary-black: hsl(202, 100%, 5%);
   --clr-primary-white: hsl(202, 100%, 100%);
 
-  /* --spacing: 0.1rem;
-  --radius: 0.25rem; */
+  /* margins */
+
+  --margin-xs: 0.15rem;
+  --margin-sm: 0.6rem;
+  --margin-m: 0.75rem;
+  --margin-l: 1rem;
 }
 
-/* GLOBAL STYLES */
+/* 
+================
+GLOBAL STYLES
+================
+*/
 
 *,
 ::after,

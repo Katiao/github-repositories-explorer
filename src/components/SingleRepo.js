@@ -17,12 +17,18 @@ const SingleRepo = ({ name, description, stargazers_count }) => {
 export default SingleRepo;
 
 const Wrapper = styled.div`
-  margin: 0.6rem 0 0.6rem 1rem;
+  margin: var(--margin-sm) 0 var(--margin-sm) var(--margin-l);
   padding: 0.6rem 0.4rem;
   background-color: var(--clr-darker-grey);
   display: grid;
   grid-template-columns: 80% 10% 10%;
   align-items: center;
+  :first-child {
+    margin: var(--margin-xs) 0 var(--margin-sm) var(--margin-l);
+  }
+  :last-child {
+    margin: var(--margin-sm) 0 0 var(--margin-l);
+  }
 
   .title {
     grid-column: 1 / 2;

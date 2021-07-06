@@ -56,7 +56,7 @@ const Wrapper = styled.section`
       color: var(--clr-primary-black);
       background-color: var(--clr-light-grey);
       padding: 0.5rem 0.5rem;
-      margin: 1rem;
+      margin: var(--margin-l);
       border-radius: 2px;
     }
     input:focus {
@@ -77,7 +77,7 @@ const Wrapper = styled.section`
       background-color: var(--clr-primary-blue);
       color: var(--clr-light-grey);
       padding: 0.5rem 0.5rem;
-      margin: 0 1rem;
+      margin: 0 var(--margin-l);
       cursor: pointer;
       transition: all 0.3s linear;
       &:hover {

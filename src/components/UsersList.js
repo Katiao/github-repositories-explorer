@@ -69,11 +69,11 @@ const Wrapper = styled.div`
   color: var(--clr-primary-black);
   background-color: var(--clr-light-grey);
   padding: 0.4rem 0.3rem;
-  margin: 0.75rem 0;
+  margin: var(--margin-m) 0;
   border-radius: 2px;
   cursor: pointer;
   :first-child {
-    margin: 0.6rem 0;
+    margin: var(--margin-sm) 0;
   }
 
   .login {
