@@ -4,7 +4,6 @@ import SearchForm from "./components/SearchForm";
 import UsersList from "./components/UsersList";
 import Loading from "./components/Loading";
 import SearchSummary from "./components/SearchSummary";
-import "./App.css";
 import { GithubContext } from "./context/context";
 
 function App() {
