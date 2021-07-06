@@ -59,6 +59,11 @@ const Wrapper = styled.section`
       margin: 1rem;
       border-radius: 2px;
     }
+    input:focus {
+      border-color: var(--clr-dark-grey);
+      outline: none;
+    }
+
     input::placeholder {
       color: var(--clr-darkest-grey);
     }
