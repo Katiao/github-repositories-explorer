@@ -9,7 +9,7 @@ const SearchSummary = () => {
       {githubUsers < 1 ? (
         <p>No users found with "{searchedUser}"</p>
       ) : (
-        <p>Showing users for "{searchedUser}" </p>
+        <p>Showing users with "{searchedUser}" </p>
       )}
     </Wrapper>
   );
