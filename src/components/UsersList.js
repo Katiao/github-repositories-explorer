@@ -82,9 +82,10 @@ const Wrapper = styled.div`
   }
 
   .arrow {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     stroke-width: 0.02rem;
     cursor: pointer;
+    transition: all 0.2s linear;
   }
 
   .arrow-down {
