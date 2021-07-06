@@ -45,6 +45,10 @@ function UsersList() {
               <div>
                 {isRepoLoading ? (
                   <Loading />
+                ) : repos < 1 ? (
+                  <div>
+                    <p>There are no repositories for this user</p>
+                  </div>
                 ) : (
                   repos.map((repo) => {
                     return <SingleRepo key={repo.id} {...repo} />;
