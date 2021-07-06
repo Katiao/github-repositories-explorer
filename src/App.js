@@ -3,11 +3,12 @@ import styled from "styled-components";
 import SearchForm from "./components/SearchForm";
 import UsersList from "./components/UsersList";
 import Loading from "./components/Loading";
+import SearchSummary from "./components/SearchSummary";
 import "./App.css";
 import { GithubContext } from "./context/context";
 
 function App() {
-  const { isLoading } = React.useContext(GithubContext);
+  const { isLoading, showSearchSummary } = React.useContext(GithubContext);
   if (isLoading) {
     return (
       <Container>
@@ -22,6 +23,7 @@ function App() {
     <Wrapper>
       <div className="container">
         <SearchForm />
+        {showSearchSummary && <SearchSummary />}
         <UsersList />
       </div>
     </Wrapper>

@@ -15,6 +15,8 @@ const GithubProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("a");
   const [githubUsers, setGithubUsers] = useState([]);
   const [repos, setRepos] = useState([]);
+  const [showSearchSummary, setShowSearchSummary] = useState(false);
+  const [searchedUser, setSearchedUser] = useState("");
 
   //passed down this function in values as we'll use that in the SearchForm
   const searchGithubUsers = async (user) => {
@@ -32,6 +34,7 @@ const GithubProvider = ({ children }) => {
       console.log("there is no user with that username");
     }
     setIsLoading(false);
+    setShowSearchSummary(true);
   };
 
   //pass down this function in values so that we can use it in the SingleUser.js
@@ -44,6 +47,7 @@ const GithubProvider = ({ children }) => {
     if (repoResponse) {
       setRepos(repoResponse);
       setIsRepoLoading(false);
+      setShowSearchSummary(false);
     } else {
       console.log("there are no repos for this user");
     }
@@ -62,6 +66,9 @@ const GithubProvider = ({ children }) => {
         searchGithubUsers,
         repos,
         searchRepos,
+        showSearchSummary,
+        searchedUser,
+        setSearchedUser,
       }}
     >
       {children}

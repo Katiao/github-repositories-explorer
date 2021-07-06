@@ -27,12 +27,13 @@ function UsersList() {
   };
 
   //mapping through users data and displaying each user:
+
   return (
     <div>
       {githubUsers.map((item, index) => {
         return (
-          <>
-            <Wrapper onClick={() => handleClick(index, item.login)} key={index}>
+          <React.Fragment key={item.login}>
+            <Wrapper onClick={() => handleClick(index, item.login)}>
               <h3 className="login">{item.login}</h3>
               <MdKeyboardArrowDown
                 className={`${
@@ -51,7 +52,7 @@ function UsersList() {
                 )}
               </div>
             ) : null}
-          </>
+          </React.Fragment>
         );
       })}
     </div>
