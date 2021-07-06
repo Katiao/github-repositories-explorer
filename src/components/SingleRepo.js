@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   .title {
     grid-column: 1 / 2;
     margin-bottom: 2px;
+    word-wrap: break-word;
   }
 
   .description {

@@ -31,20 +31,23 @@ function App() {
 
 const Wrapper = styled.div`
   .container {
+    margin: var(--margin-l);
     background-color: var(--clr-primary-white);
     display: grid;
     justify-content: center;
-    grid-template-columns: 18rem;
+    grid-template-columns: minmax(15rem, 30%);
     //gap: 1rem;
   }
 `;
 
 const Container = styled.div`
   .container {
+    margin: var(--margin-l);
     background-color: var(--clr-primary-white);
     display: grid;
     justify-content: center;
-    grid-template-columns: 18rem;
+    //grid-template-columns: 18rem;
+    grid-template-columns: minmax(15rem, 30%);
     //gap: 1rem;
   }
 `;

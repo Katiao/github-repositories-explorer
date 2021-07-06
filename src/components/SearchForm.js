@@ -56,7 +56,7 @@ const Wrapper = styled.section`
       color: var(--clr-primary-black);
       background-color: var(--clr-light-grey);
       padding: 0.5rem 0.5rem;
-      margin: var(--margin-l);
+      margin: 0 var(--margin-l) var(--margin-l);
       border-radius: 2px;
     }
     input:focus {
