@@ -28,8 +28,8 @@ const GithubProvider = ({ children }) => {
     if (userResponse) {
       const usersList = userResponse.items.slice(0, 5);
       setGithubUsers(usersList);
-
-      //console.log(usersList);
+      console.log(userResponse, "user response");
+      console.log(usersList, "users List - state");
     } else {
       console.log("there is no user with that username");
     }

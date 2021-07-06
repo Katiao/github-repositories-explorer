@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { useGithubContext } from "../context/context";
 
@@ -6,14 +7,16 @@ const SearchForm = () => {
   const { searchGithubUsers, isLoading, searchedUser, setSearchedUser } =
     useGithubContext();
 
+  //local state for onChange while user types search term:
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //function coming from global context but user state is local
-    if (searchedUser) {
-      searchGithubUsers(searchedUser);
+    if (searchTerm) {
+      setSearchedUser(searchTerm);
+      searchGithubUsers(searchTerm);
     }
   };
-
   return (
     <Wrapper className="section">
       <form onSubmit={handleSubmit}>
@@ -21,8 +24,8 @@ const SearchForm = () => {
           <input
             type="text"
             placeholder="Enter username"
-            value={searchedUser}
-            onChange={(e) => setSearchedUser(e.target.value)}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           {!isLoading && <button type="submit">Search</button>}
         </div>

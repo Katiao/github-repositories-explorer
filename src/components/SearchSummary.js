@@ -3,10 +3,14 @@ import styled from "styled-components";
 import { useGithubContext } from "../context/context";
 
 const SearchSummary = () => {
-  const { searchedUser } = useGithubContext();
+  const { searchedUser, githubUsers } = useGithubContext();
   return (
     <Wrapper>
-      <p>Showing users for "{searchedUser}" </p>
+      {githubUsers < 1 ? (
+        <p>No users found with "{searchedUser}"</p>
+      ) : (
+        <p>Showing users for "{searchedUser}" </p>
+      )}
     </Wrapper>
   );
 };
