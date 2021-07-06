@@ -36,7 +36,6 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     grid-template-columns: minmax(15rem, 30%);
-    //gap: 1rem;
   }
 `;
 
@@ -48,7 +47,6 @@ const Container = styled.div`
     justify-content: center;
     //grid-template-columns: 18rem;
     grid-template-columns: minmax(15rem, 30%);
-    //gap: 1rem;
   }
 `;
 

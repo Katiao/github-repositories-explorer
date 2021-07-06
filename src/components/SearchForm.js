@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { useGithubContext } from "../context/context";
 
 const SearchForm = () => {
-  //get things from global context
+  //get things from global context:
   const { searchGithubUsers, isLoading, setSearchedUser } = useGithubContext();
 
-  //useref used for focus on search - see below
+  //useref used for focus on search:
   const searchValue = useRef("");
 
   //local state for onChange while user types search term:
   const [searchTerm, setSearchTerm] = useState("");
 
-  //focus on search form when app loads
+  //focus on search form when app loads:
   useEffect(() => {
     searchValue.current.focus();
   }, []);
@@ -44,13 +44,11 @@ const SearchForm = () => {
 
 const Wrapper = styled.section`
   .form-control {
-    //background-color: var(--clr-primary-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     input {
       width: 100%;
-      //max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-dark-grey);
       color: var(--clr-primary-black);
@@ -71,7 +69,6 @@ const Wrapper = styled.section`
     button {
       border-radius: 2px;
       width: 100%;
-      //max-width: 20rem;
       border: 1px solid;
       border-color: var(--clr-primary-blue);
       background-color: var(--clr-primary-blue);

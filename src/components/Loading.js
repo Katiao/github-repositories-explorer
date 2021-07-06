@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 12rem;
   height: 12rem;
   animation: spin 2s linear infinite;
-  margin: 2rem auto;
+  margin: var(--margin-xl) auto;
 
   @keyframes spin {
     0% {

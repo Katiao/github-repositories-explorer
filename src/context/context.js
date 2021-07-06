@@ -8,11 +8,11 @@ const CLIENT_SECRET = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
 //access to Provider:
 const GithubContext = React.createContext();
 
-//return the context provider that will wrap our whole app and provide access to state
+//return the context provider that will wrap our whole app and provide access to state:
 const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isRepoLoading, setIsRepoLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("a");
+  const [searchTerm, setSearchTerm] = useState("");
   const [githubUsers, setGithubUsers] = useState([]);
   const [repos, setRepos] = useState([]);
   const [showSearchSummary, setShowSearchSummary] = useState(false);
@@ -28,8 +28,6 @@ const GithubProvider = ({ children }) => {
     if (userResponse) {
       const usersList = userResponse.items.slice(0, 5);
       setGithubUsers(usersList);
-      console.log(userResponse, "user response");
-      console.log(usersList, "users List - state");
     } else {
       console.log("there is no user with that username");
     }
@@ -37,7 +35,7 @@ const GithubProvider = ({ children }) => {
     setShowSearchSummary(true);
   };
 
-  //pass down this function in values so that we can use it in the SingleUser.js
+  //pass down this function in values so that we can use it in the UsersList.js:
   const searchRepos = async (login) => {
     setIsRepoLoading(true);
     const response = await fetch(
@@ -52,11 +50,9 @@ const GithubProvider = ({ children }) => {
       console.log("there are no repos for this user");
     }
   };
-  //console.log(repos);
 
   return (
     <GithubContext.Provider
-      //object with properties
       value={{
         isLoading,
         isRepoLoading,

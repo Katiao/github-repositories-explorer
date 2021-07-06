@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MdKeyboardArrowDown } from "react-icons/md";
-//import SingleUser from "./SingleUser";
-//import Loading from "./Loading";
 import { useGithubContext } from "../context/context";
 import SingleRepo from "./SingleRepo";
 import Loading from "./Loading";
 
 function UsersList() {
-  //destructuring, getting data/state from context:
+  //destructuring, getting data/ global state from context:
   const { isRepoLoading, repos, githubUsers, searchRepos } = useGithubContext();
+  //local state for accordion functionality:
   const [clicked, setClicked] = useState(false);
 
   const toggle = (index) => {
-    // if clicked username is already active, then close it
+    // if clicked username is already active, then close it:
     if (clicked === index) {
       return setClicked(null);
     }
@@ -26,7 +25,7 @@ function UsersList() {
     toggle(index);
   };
 
-  //mapping through users data and displaying each user:
+  //mapping through users data and displaying each user login:
 
   return (
     <div>
@@ -67,7 +66,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  //max-width: 20rem;
   border: 1px solid;
   border-color: var(--clr-dark-grey);
   color: var(--clr-primary-black);

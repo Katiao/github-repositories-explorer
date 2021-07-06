@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { FaStar } from "react-icons/fa";
-//import { useGithubContext } from "../context/context";
 
 const SingleRepo = ({ name, description, stargazers_count }) => {
   return (
@@ -55,5 +54,4 @@ const Wrapper = styled.div`
     justify-self: center;
     margin-bottom: 2px;
   }
-  //padding: 0.5rem 0.4rem;
 `;
