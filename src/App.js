@@ -10,12 +10,12 @@ function App() {
   const { isLoading, showSearchSummary } = useGithubContext();
   if (isLoading) {
     return (
-      <Container>
+      <Wrapper>
         <div className="container">
           <SearchForm />
           <Loading />
         </div>
-      </Container>
+      </Wrapper>
     );
   }
   return (
@@ -35,19 +35,42 @@ const Wrapper = styled.div`
     background-color: var(--clr-primary-white);
     display: grid;
     justify-content: center;
-    grid-template-columns: minmax(15rem, 30%);
+    grid-template-columns: 30%;
+    @media only screen and (max-width: 1300px) {
+      grid-template-columns: 40%;
+    }
+    @media only screen and (max-width: 950px) {
+      grid-template-columns: 50%;
+    }
+    @media only screen and (max-width: 650px) {
+      grid-template-columns: 80%;
+    }
+    @media only screen and (max-width: 450px) {
+      grid-template-columns: 100%;
+      margin: var(--margin-sm);
+    }
+
+    //grid-template-columns: 18rem;
+    //grid-template-columns: minmax(15rem, 30%);
   }
 `;
 
-const Container = styled.div`
+/* const Container = styled.div`
   .container {
     margin: var(--margin-l);
     background-color: var(--clr-primary-white);
     display: grid;
     justify-content: center;
+    grid-template-columns: 30%;
+    @media only screen and (max-width: 1300px) {
+      grid-template-columns: 40%;
+    }
+    @media only screen and (max-width: 950px) {
+      grid-template-columns: 50%;
+    }
     //grid-template-columns: 18rem;
-    grid-template-columns: minmax(15rem, 30%);
+    //grid-template-columns: minmax(15rem, 30%);
   }
-`;
+`; */
 
 export default App;
