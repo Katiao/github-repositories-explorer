@@ -4,10 +4,10 @@ import SearchForm from "./components/SearchForm";
 import UsersList from "./components/UsersList";
 import Loading from "./components/Loading";
 import SearchSummary from "./components/SearchSummary";
-import { GithubContext } from "./context/context";
+import { useGithubContext } from "./context/context";
 
 function App() {
-  const { isLoading, showSearchSummary } = React.useContext(GithubContext);
+  const { isLoading, showSearchSummary } = useGithubContext();
   if (isLoading) {
     return (
       <Container>

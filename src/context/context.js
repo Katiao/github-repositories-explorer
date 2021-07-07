@@ -71,7 +71,7 @@ const GithubProvider = ({ children }) => {
     </GithubContext.Provider>
   );
 };
-export { GithubProvider, GithubContext };
+export { GithubProvider };
 export const useGithubContext = () => {
   return useContext(GithubContext);
 };

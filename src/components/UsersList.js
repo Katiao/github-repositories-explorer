@@ -8,6 +8,7 @@ import Loading from "./Loading";
 function UsersList() {
   //destructuring, getting data/ global state from context:
   const { isRepoLoading, repos, githubUsers, searchRepos } = useGithubContext();
+
   //local state for accordion functionality:
   const [clicked, setClicked] = useState(false);
 
@@ -16,7 +17,7 @@ function UsersList() {
     if (clicked === index) {
       return setClicked(null);
     }
-    //otherwise set clicked to actual value which ends up opening it
+    //otherwise set clicked to actual value which ends up opening it:
     setClicked(index);
   };
 
@@ -26,12 +27,11 @@ function UsersList() {
   };
 
   //mapping through users data and displaying each user login:
-
   return (
     <div>
       {githubUsers.map((item, index) => {
         return (
-          <React.Fragment key={item.login}>
+          <React.Fragment key={item.id}>
             <Wrapper onClick={() => handleClick(index, item.login)}>
               <h3 className="login">{item.login}</h3>
               <MdKeyboardArrowDown
@@ -49,6 +49,7 @@ function UsersList() {
                     <p>There are no repositories for this user</p>
                   </div>
                 ) : (
+                  /* mapping through repos for each user and displaying them: */
                   repos.map((repo) => {
                     return <SingleRepo key={repo.id} {...repo} />;
                   })

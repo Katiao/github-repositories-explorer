@@ -6,11 +6,11 @@ const SearchForm = () => {
   //get things from global context:
   const { searchGithubUsers, isLoading, setSearchedUser } = useGithubContext();
 
-  //useref used for focus on search:
-  const searchValue = useRef("");
-
   //local state for onChange while user types search term:
   const [searchTerm, setSearchTerm] = useState("");
+
+  //useref used for focus on search:
+  const searchValue = useRef("");
 
   //focus on search form when app loads:
   useEffect(() => {
