@@ -55,22 +55,4 @@ const Wrapper = styled.div`
   }
 `;
 
-/* const Container = styled.div`
-  .container {
-    margin: var(--margin-l);
-    background-color: var(--clr-primary-white);
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 30%;
-    @media only screen and (max-width: 1300px) {
-      grid-template-columns: 40%;
-    }
-    @media only screen and (max-width: 950px) {
-      grid-template-columns: 50%;
-    }
-    //grid-template-columns: 18rem;
-    //grid-template-columns: minmax(15rem, 30%);
-  }
-`; */
-
 export default App;
