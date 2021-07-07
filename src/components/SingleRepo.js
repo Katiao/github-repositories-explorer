@@ -70,12 +70,14 @@ const Wrapper = styled.div`
       grid-row: 1 / 2;
       text-align: center;
       font-size: 1rem;
+      margin-bottom: 4px;
     }
     .description {
       grid-column: 1 / 3;
       grid-row: 2 / 3;
       text-align: center;
       font-size: 0.9rem;
+      margin-bottom: 4px;
     }
     .stars {
       grid-column: 1 / 2;
